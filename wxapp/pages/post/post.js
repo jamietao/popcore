@@ -1,4 +1,8 @@
-// pages/welcome/welcome.js
+import {
+  postList
+} from '../../data/mockData.js';
+
+// pages/post/post.js
 Page({
 
   /**
@@ -12,7 +16,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    this.setData({
+      postList: postList
+    })
   },
 
   /**
@@ -62,11 +68,5 @@ Page({
    */
   onShareAppMessage: function() {
 
-  },
-
-  onTapJourney: function(event) {
-    wx.navigateTo({
-      url: '../post/post',
-    })
   }
 })

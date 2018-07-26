@@ -1,7 +1,7 @@
 <view class='container'>
   <image class='avatar' src='/images/avatar/avatar-1.png'></image>
   <text class='greeting'>Hello, Popcore</text>
-  <view class='journey-container'>
+  <view class='journey-container' catchtap='onTapJourney'>
     <text class='journey'>开启小程序之旅</text>
   </view>
 </view>
