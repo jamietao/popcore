@@ -1,0 +1,13 @@
+<view class="container">
+  <image class='header-image' src='/images/post/post-1.jpg'></image>
+  <text class='title'>从童年呼啸而过的火车</text>
+  <view class='author-date'>
+    <view class='author-box'>
+      <image class='avatar' src='/images/avatar/avatar-1.png'></image>
+      <text class='author'>Jamie Tao</text>
+    </view>
+    <text class='date'>24小时前</text>
+  </view>
+  <text class='detail'>冰棍与雪糕绝对不是同一个东西。3到5毛钱的雪糕犹如现在的哈根达斯，而5分1毛的 冰棍儿就像现在的老冰棒。时过境迁，...
+  </text>
+</view>

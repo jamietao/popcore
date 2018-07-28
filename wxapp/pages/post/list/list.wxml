@@ -10,9 +10,9 @@
       <image src="/images/post/post-3@text.jpg" data-post-id='5' />
     </swiper-item>
   </swiper>
-  <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
+  <block wx:for="{{postList}}" wx:for-item="item" wx:key="item.postId" wx:for-index="idx">
     <view catchtap="onTapToDetail" data-post-id="{{item.postId}}">
-      <post-item avatar="{{item.avatar}}" date="{{item.date}}" title="{{item.title}}" postImg="{{item.postImg}}" content="{{item.content}}" collectionNum="{{item.collectionNum}}" readingNum="{{item.readingNum}}" commentNum="{{item.commentNum}}"></post-item>
+      <post-item avatar="{{item.author.avatar}}" date="{{item.createDate}}" title="{{item.title}}" postImg="{{item.postImg}}" content="{{item.content}}" collectionNum="{{item.collectionNum}}" readingNum="{{item.readingNum}}" commentNum="{{item.commentNum}}"></post-item>
     </view>
   </block>
 </view>

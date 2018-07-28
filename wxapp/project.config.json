@@ -36,9 +36,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "post_page_debug",
-					"pathName": "pages/post/post"
+					"pathName": "pages/post/list/list",
+					"query": ""
 				}
 			]
 		}
