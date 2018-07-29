@@ -38,8 +38,8 @@
 				{
 					"id": 0,
 					"name": "post_page_debug",
-					"pathName": "pages/post/list/list",
-					"query": ""
+					"pathName": "pages/post/detail/detail",
+					"query": "postId=1"
 				}
 			]
 		}

@@ -2,8 +2,13 @@ import {
   postList
 } from 'mockPostList';
 
+import {
+  postDetails
+} from 'mockPostDetails';
+
 var mockData = {
-  postList: postList
+  postList: postList,
+  postDetails: postDetails
 };
 
 export {

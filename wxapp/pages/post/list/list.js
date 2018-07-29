@@ -23,6 +23,13 @@ Page({
     })
   },
 
+  onTapToDetail: function(event) {
+    var postId = event.currentTarget.dataset.postId;
+    wx.navigateTo({
+      url: '../detail/detail?postId=' + postId,
+    });
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

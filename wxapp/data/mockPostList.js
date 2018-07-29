@@ -6,6 +6,8 @@ var postList = [{
     content: "冰棍与雪糕绝对不是同一个东西。3到5毛钱的雪糕犹如现在的哈根达斯，而5分1毛的 冰棍儿就像现在的老冰棒。时过境迁，...",
     readingNum: 23,
     collectionNum: 3,
+    upStatus: false,
+    upNum: 11,
     commentNum: 0,
     author: {
       avatar: "/images/avatar/avatar-1.png",
@@ -21,6 +23,8 @@ var postList = [{
     readingNum: 96,
     collectionNum: 7,
     commentNum: 4,
+    upStatus: true,
+    upNum: 22,
     author: {
       avatar: "/images/avatar/avatar-2.png",
       name: "林白衣"
@@ -35,6 +39,8 @@ var postList = [{
     readingNum: 56,
     collectionNum: 6,
     commentNum: 0,
+    upStatus: false,
+    upNum: 9,
     author: {
       avatar: "/images/avatar/avatar-3.png",
       name: "青石"

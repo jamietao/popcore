@@ -18,6 +18,32 @@ class PostService {
   getPostDetailsById(postId) {
     return wx.getStorageSync(PostDetailsCacheKey).find(post => post.postId == postId);
   }
+
+  toggleLike(postId) {
+    var posts = wx.getStorageSync(PostDetailsCacheKey);
+    var post = posts.find(post => post.postId == postId);
+    if (post.upStatus) {
+      post.upNum = post.upNum - 1;
+    } else {
+      post.upNum = post.upNum + 1;
+    }
+
+    post.upStatus = !post.upStatus;
+    wx.setStorageSync(PostDetailsCacheKey, posts);
+  }
+
+  toggleCollection(postId) {
+    var posts = wx.getStorageSync(PostDetailsCacheKey);
+    var post = posts.find(post => post.postId == postId);
+    if (post.collectionStatus) {
+      post.collectionNum = post.collectionNum - 1;
+    } else {
+      post.collectionNum = post.collectionNum + 1;
+    }
+
+    post.collectionStatus = !post.collectionStatus;
+    wx.setStorageSync(PostDetailsCacheKey, posts);
+  }
 }
 
 export {

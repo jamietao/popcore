@@ -1,13 +1,29 @@
 <view class="container">
-  <image class='header-image' src='/images/post/post-1.jpg'></image>
-  <text class='title'>从童年呼啸而过的火车</text>
+  <image class='header-image' src='{{post.postImg}}'></image>
+  <text class='title'>{{post.title}}</text>
   <view class='author-date'>
     <view class='author-box'>
-      <image class='avatar' src='/images/avatar/avatar-1.png'></image>
-      <text class='author'>Jamie Tao</text>
+      <image class='avatar' src='{{post.author.avatar}}'></image>
+      <text class='author'>{{post.author.name}}</text>
     </view>
     <text class='date'>24小时前</text>
   </view>
-  <text class='detail'>冰棍与雪糕绝对不是同一个东西。3到5毛钱的雪糕犹如现在的哈根达斯，而5分1毛的 冰棍儿就像现在的老冰棒。时过境迁，...
-  </text>
+  <text class='detail'>{{post.detail}}</text>
+
+  <view class="tool">
+    <view class="tool-item" catchtap="onUpTap" data-post-id="{{post.postId}}">
+      <image wx:if="{{post.upStatus}}" src="/images/icon/wx_app_liked.png" />
+      <image wx:else src="/images/icon/wx_app_like.png" />
+      <text>{{post.upNum}}</text>
+    </view>
+    <view class="tool-item comment" catchtap="onCommentTap" data-post-id="{{post.postId}}">
+      <image src="/images/icon/wx_app_message.png"></image>
+      <text>{{post.commentNum}}</text>
+    </view>
+    <view class="tool-item" catchtap="onCollectionTap" data-post-id="{{post.postId}}">
+      <image wx:if="{{post.collectionStatus}}" src="/images/icon/wx_app_collected.png" />
+      <image wx:else src="/images/icon/wx_app_collect.png" />
+      <text>{{post.collectionNum}}</text>
+    </view>
+  </view>
 </view>

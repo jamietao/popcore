@@ -9,7 +9,7 @@ class ServiceProvider {
 
   getPostService() {
     if (!this._postService) {
-      this._postService = new PostService(mockData.postList, []);
+      this._postService = new PostService(mockData.postList, mockData.postDetails);
     }
     return this._postService;
   }
