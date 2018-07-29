@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isPlayingMusic: false
   },
 
   /**
@@ -22,6 +22,24 @@ Page({
     });
   },
 
+  onMusicPlayTap: function(event) {
+    if (this.data.isPlayingMusic) {
+      wx.pauseBackgroundAudio();
+      this.setData({
+        isPlayingMusic: false
+      });
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: this.data.post.backgroundMusic.url,
+        title: this.data.post.backgroundMusic.title,
+        coverImgUrl: this.data.post.backgroundMusic.coverImg
+      });
+      this.setData({
+        isPlayingMusic: true
+      });
+    }
+  },
+
   onUpTap: function(event) {
     var postId = event.currentTarget.dataset.postId;
     this.postService.toggleLike(postId);
@@ -32,13 +50,20 @@ Page({
     });
   },
 
-  onCollectionTap: function (event) {
+  onCollectionTap: function(event) {
     var postId = event.currentTarget.dataset.postId;
     this.postService.toggleCollection(postId);
     var newPostData = this.postService.getPostDetailsById(postId);
 
     this.setData({
       post: newPostData
+    });
+
+    wx.showToast({
+      title: newPostData.collectionStatus ? "收藏成功" : "取消成功",
+      duration: 1000,
+      icon: "success",
+      mask: true
     });
   },
 
@@ -67,7 +92,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    if (this.data.isPlayingMusic) {
+      wx.stopBackgroundAudio();
+    }
   },
 
   /**
