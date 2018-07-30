@@ -33,8 +33,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "post_page_debug",
+					"pathName": "pages/movie/list/list",
+					"query": "postId=1"
+				}
+			]
 		}
 	}
 }

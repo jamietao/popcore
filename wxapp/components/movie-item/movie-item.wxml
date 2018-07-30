@@ -1,0 +1,5 @@
+<view class="movie-container" catchtap="onMovieTap" data-movie-id="{{movie.movieId}}">
+  <image class="movie-img" src="{{movie.coverageUrl}}"></image>
+  <text class="movie-title">{{movie.title}}</text>
+  <stars stars="{{movie.stars}}" score="{{movie.averageScore}}"></stars>
+</view>
