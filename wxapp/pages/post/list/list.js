@@ -1,7 +1,3 @@
-import {
-  serviceProvider
-} from '../../../services/ServiceProvider.js'
-
 // pages/post/post.js
 Page({
 
@@ -16,8 +12,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var postService = serviceProvider.getPostService();
-    var postList = postService.getAll();
+    this._postService = getApp().getService();
+    var postList = this._postService.getAll();
     this.setData({
       postList: postList
     })

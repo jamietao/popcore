@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/post/list/list",
-    "pages/post/detail/detail"
+    "pages/post/detail/detail",
+    "pages/movie/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,5 +13,26 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#4A6141"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#4A6141",
+    "color": "#333",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/post/list/list",
+        "text": "文字",
+        "iconPath": "images/icon/wx_app_news.png",
+        "selectedIconPath": "images/icon/wx_app_news@HL.png"
+      },
+      {
+        "pagePath": "pages/movie/list/list",
+        "text": "光影",
+        "iconPath": "images/icon/wx_app_movie.png",
+        "selectedIconPath": "images/icon/wx_app_movie@HL.png"
+      }
+    ]
   }
 }

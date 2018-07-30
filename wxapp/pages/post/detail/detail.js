@@ -1,7 +1,3 @@
-import {
-  serviceProvider
-} from '../../../services/ServiceProvider.js';
-
 Page({
 
   /**
@@ -15,8 +11,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.postService = serviceProvider.getPostService();
-    var postDetails = this.postService.getPostDetailsById(options.postId);
+    this._postService = getApp().getService();
+    var postDetails = this._postService.getPostDetailsById(options.postId);
     this.setData({
       post: postDetails
     });
@@ -42,8 +38,8 @@ Page({
 
   onUpTap: function(event) {
     var postId = event.currentTarget.dataset.postId;
-    this.postService.toggleLike(postId);
-    var newPostData = this.postService.getPostDetailsById(postId);
+    this._postService.toggleLike(postId);
+    var newPostData = this._postService.getPostDetailsById(postId);
 
     this.setData({
       post: newPostData
@@ -52,8 +48,8 @@ Page({
 
   onCollectionTap: function(event) {
     var postId = event.currentTarget.dataset.postId;
-    this.postService.toggleCollection(postId);
-    var newPostData = this.postService.getPostDetailsById(postId);
+    this._postService.toggleCollection(postId);
+    var newPostData = this._postService.getPostDetailsById(postId);
 
     this.setData({
       post: newPostData

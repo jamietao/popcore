@@ -1,3 +1,11 @@
+import {
+  mockData
+} from "./data/index.js";
+
+import {
+  PostService
+} from "./services/PostService.js";
+
 //app.js
 App({
   onLaunch: function() {
@@ -35,5 +43,12 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  getService: function() {
+    if (!this._postService) {
+      this._postService = new PostService(mockData.postList, mockData.postDetails);
+    }
+
+    return this._postService;
   }
 })
